@@ -93,9 +93,7 @@ public class ShowStudents extends FrameOptions {
         students = session.createQuery("select s.idStudent, s.name, s.surname from Student s").getResultList();
         stopSession();
 
-        for (Object student : students) {
+        for (Object student : students)
             dtm.addRow((Object[]) student);
-        }
-
     }
 }

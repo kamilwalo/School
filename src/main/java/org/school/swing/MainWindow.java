@@ -1,36 +1,37 @@
 package org.school.swing;
 
-import org.hibernate.Session;
-import org.school.DbConnector;
+import org.school.Account;
+import org.school.entity.Lecturer;
+import org.school.entity.Student;
+import org.school.entity.Subjects;
+import org.school.entity.TimeSheet;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainWindow extends FrameOptions {
     private JButton showStudentsButton;
-    private JButton showDegreesButton;
+    private JButton timeSheetButton;
     private JButton showLecturersButton;
-    private JButton showSubjcectsButton;
+    private JButton showSubjectsButton;
     private JLabel mainMenuLabel;
     private JPanel mainMenuPanel;
-
+    private JPanel leftPanel;
+    private JLabel accountInfoJLabel;
 
 
     public MainWindow()  {
         super();
+
         setContentPane(mainMenuPanel);
         mainMenuLabel.setFont(new Font("Times New Roman",Font.BOLD,60));
+
+        accountInfoJLabel.setText("You are logged as "+ Account.getName()+" "+Account.getSurname());
 
         setVisible(true);
 
         showStudentsButton.addActionListener(e -> {
             new ShowStudents();
-            dispose();
-        });
-        showLecturersButton.addActionListener(e -> {
-            new ShowLecturers();
             dispose();
         });
     }

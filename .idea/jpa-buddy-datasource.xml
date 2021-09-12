@@ -3,6 +3,7 @@
   <component name="JpbDataSourceConfig">
     <data-sources>
       <data-source id="b3736737-6b5b-4400-bc49-dd90ae282b8b" name="University" url="jdbc:mysql://localhost/university?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="34bd1bbd-b281-41f6-bf21-8e83998b482e" name="School" url="jdbc:postgresql://localhost/School" driverClass="org.postgresql.Driver" />
     </data-sources>
   </component>
 </project>

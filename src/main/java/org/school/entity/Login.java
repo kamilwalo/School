@@ -1,9 +1,6 @@
 package org.school.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "login")
@@ -15,12 +12,20 @@ public class Login {
     @Column(name = "pass")
     private String password;
 
+    @JoinColumn(name = "id_lecturer")
+    @OneToOne
+    private Lecturer lecturer;
+
 
     public Login() {
     }
 
     public String getLogin() {
         return login;
+    }
+
+    public Lecturer getLecturer() {
+        return lecturer;
     }
 
     @Override

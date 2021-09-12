@@ -1,12 +1,13 @@
 package org.school.swing;
 
 import org.hibernate.Session;
+import org.school.Account;
 import org.school.DbConnector;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Login extends JFrame{
+public class Login extends FrameOptions{
     private JPasswordField passwordField;
     private JTextField loginField;
     private JButton loginButton;
@@ -47,7 +48,26 @@ public class Login extends JFrame{
             }
             session.getTransaction().commit();
             if(result!=null) {
+
+
+                session=dbConnector.getSf().getCurrentSession();
+                session.beginTransaction();
+
+                Object[] singleResult = (Object[]) session.createQuery("select lec.name,lec.surname, lec.lecturerId from Login l join l.lecturer lec where l.login=:login and l.password =:password")
+                        .setParameter("login", loginField.getText())
+                        .setParameter("password", String.valueOf(passwordField.getPassword()))
+                        .getSingleResult();
+
+                session.getTransaction().commit();
+
+                Account.setLogin(loginField.getText());
+                Account.setPassword(String.valueOf(passwordField.getPassword()));
+                Account.setName((String) singleResult[0]);
+                Account.setSurname((String) singleResult[1]);
+                Account.setIdLecturer((Integer) singleResult[2]);
+
                 new MainWindow();
+
                 dispose();
             }
         });

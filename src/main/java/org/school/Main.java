@@ -1,6 +1,7 @@
 package org.school;
 
 
+import com.mysql.cj.log.Log;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.school.entity.*;
@@ -10,6 +11,7 @@ import org.school.swing.MainWindow;
 public class Main{
 
     public static void main(String[] args) {
+//        new MainWindow();
         new MainWindow();
 
 //        DbConnector dbConnector = new DbConnector();
