@@ -3,6 +3,8 @@ package org.school.entity;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 @Entity
 @Table(name = "time_sheet")
@@ -27,6 +29,9 @@ public class TimeSheet {
 
     @Column(nullable = false, columnDefinition = "BOOLEAN")
     private Boolean presence;
+
+    @Column(nullable = false, columnDefinition = "DATETIME")
+    private Date data;
 
 
     public TimeSheet() {

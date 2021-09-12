@@ -12,9 +12,6 @@ public abstract class FrameOptions extends JFrame {
     protected SessionFactory sf = dbConnector.getSf();
     protected Session session = sf.getCurrentSession();
 
-    protected static String login;
-    protected static String password;
-
 
     protected FrameOptions(){
         setSize(new Dimension(500,500));
@@ -32,19 +29,4 @@ public abstract class FrameOptions extends JFrame {
         session.getTransaction().commit();
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

@@ -1,13 +1,11 @@
 package org.school.swing;
 
 import org.school.Account;
-import org.school.entity.Lecturer;
-import org.school.entity.Student;
-import org.school.entity.Subjects;
-import org.school.entity.TimeSheet;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainWindow extends FrameOptions {
     private JButton showStudentsButton;
@@ -33,6 +31,10 @@ public class MainWindow extends FrameOptions {
         showStudentsButton.addActionListener(e -> {
             new ShowStudents();
             dispose();
+        });
+        timeSheetButton.addActionListener(e -> {
+            dispose();
+            new CheckingPresence();
         });
     }
 }

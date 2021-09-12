@@ -6,6 +6,9 @@ import org.school.DbConnector;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Login extends FrameOptions{
     private JPasswordField passwordField;
@@ -21,6 +24,10 @@ public class Login extends FrameOptions{
 
     public Login() {
         setContentPane(mainPanel);
+        loginField.setText("root");
+        passwordField.setText("1234");
+
+
 
         errorJLabel.setVisible(false);
         errorJLabel.setFont(new Font("Times New Roman",Font.BOLD,20));
